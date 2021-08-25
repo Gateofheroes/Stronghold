@@ -1,0 +1,288 @@
+settings = {
+  build =   {neverStripDebugInfo = true},	
+	orientation = {
+		default = "landscapeRight",
+		supported = { "landscapeRight","landscapeLeft" }
+	},
+  splashScreen={
+    enable=false,
+    image="Default-Landscape.png"
+  },
+	iphone = {
+		plist = {
+      NSAppTransportSecurity = { NSAllowsArbitraryLoads=true },
+			UIStatusBarHidden = true,
+			UIPrerenderedIcon = true,
+      UILaunchStoryboardName = "LaunchScreen",
+      CFBundleIconFiles = {
+         "Icon-40.png",
+        "Icon-58.png",
+        "Icon-76.png",
+        "Icon-80.png",
+        "Icon-87.png",
+        "Icon-120.png",
+        "Icon-152.png",
+        "Icon-167.png",
+        "Icon-180.png",
+      },
+       UIApplicationExitsOnSuspend = false,
+        FacebookAppID = "215718745866921",
+        CFBundleURLTypes =
+        {
+            { CFBundleURLSchemes = { "fb215718745866921", } }  
+        },
+        -- Whitelist Facebook apps
+        LSApplicationQueriesSchemes =
+        {
+            "fb",  -- Needed for the facebook-v4a.isFacebookAppEnabled() API
+            "fbapi",
+            "fbauth2",
+            "fb-messenger-api",
+            "fbshareextension"
+        },
+		}
+	},
+	window = {
+    defaultMode = "fullscreen",
+    resizable = true,
+    enableMaximizeButton = true,
+     titleText = {
+        default = "Stronghold",
+      },
+
+  },
+  excludeFiles =
+  {
+    -- Exclude all files at paths which end with "secret.txt" -- pour version dev voir dans niveau 1451
+  --  all={"Thumbs.db"},
+  --all ={"*@4x.png","*@4x.jpg","*@4x.jpeg","*@6x.png","*@6x.jpg","*@6x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","git/"},-- version lte --"*@8x.png","*@8x.jpg","*@8x.jpeg" }, -- "*@4x.png" --{"*@8x.png","*@8x.jpg","*@8x.jpeg","git/"}
+  --all ={"*@4x.png","*@4x.jpg","*@4x.jpeg","*@8x.png","*@8x.jpg","*@8x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","git/"},-- version mde
+  --all ={"*@8x.png","*@8x.jpg","*@8x.jpeg","*@6x.png","*@6x.jpg","*@6x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","git/"}, -- version large
+  --all ={"*@4x.png","*@4x.jpg","*@4x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","git/"}, -- version mde lte (version pour superieur à 4.2pouce et IOS et lte avec suppression des suffixs pour android <4.2)
+  --all={"Thumbs.db","*@5x.png","*@5x.jpg","git/"},
+
+  --all ={"*@4x.png","*@4x.jpg","*@4x.jpeg","*@6x.png","*@6x.jpg","*@6x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","goh/","git/"}, -- lte not goh
+  --all ={"*@4x.png","*@4x.jpg","*@4x.jpeg","*@8x.png","*@8x.jpg","*@8x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","goh/","git/"},-- version mde not goh
+  --all ={"*@4x.png","*@4x.jpg","*@4x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","goh/","git/"}, -- mdelte not goh
+  --all ={"*@8x.png","*@8x.jpg","*@8x.jpeg","*@6x.png","*@6x.jpg","*@6x.jpeg","Thumbs.db","*@5x.png","*@5x.jpg","git/","git","/git","/git/","notgoh/","/notgoh","notgoh","/notgoh/","Thumbs.db"}, -- large not goh
+
+  --all={"git/","git","/git","/git/","notgoh/","/notgoh","notgoh","/notgoh/","Thumbs.db"}, -- version full de goh (faut créé un dossier avec tout notgoh)
+  all={"git/","notgoh/","Thumbs.db","*@6x.png","*@6x.jpg","*@6x.jpeg"}, -- version large de goh (faut créé un dossier avec tout notgoh)
+  --all={"git/","notgoh/","Thumbs.db","*@4x.png","*@4x.jpg","*@4x.jpeg"}, -- version lte de goh (faut créé un dossier avec tout notgoh)
+
+  --all={"Thumbs.db"},
+  android={ "Icon.png", "Icon-??.png", "Icon-???.png", "LaunchScreen.storyboardc", },
+  ios = { "Icon.png", "Icon-*dpi.png", },
+  web={"*@4x.png","*@4x.jpg","*@4x.jpeg"}, -- goh lte
+  },
+  android =
+  {
+    minSdkVersion = "28",
+    facebookAppId = "215718745866921",
+    isGame = true,
+    supportsScreens =
+    {
+       smallScreens  = true,
+       normalScreens = true,
+       largeScreens  = true,
+       xlargeScreens = true,
+    },
+    largeHeap = true,
+    usesPermissions =
+    {
+       "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_INTERNAL_STORAGE",
+        --"android.permission.RECEIVE_BOOT_COMPLETED", -- modif 10/10/2016
+        "com.android.vending.BILLING",
+        "com.android.vending.CHECK_LICENSE",
+        "android.permission.USE_FULL_SCREEN_INTENT",
+        --"android.permission.ACCESS_COARSE_LOCATION",-- modif 10/10/2016
+        --"android.permission.ACCESS_FINE_LOCATION",
+        --"com.google.android.providers.gsf.permissions.READ_GSERVICES"
+    },
+    usesFeatures =
+    {
+          -- If you set permissions "ACCESS_FINE_LOCATION" and "ACCESS_COARSE_LOCATION" above,
+          -- you should set the app to NOT require location services:
+          { name="android.hardware.location", required=false },
+          { name="android.hardware.location.gps", required=false },
+          { name="android.hardware.location.network", required=false },
+          { name = "android.hardware.touchscreen", required = false},
+     },
+  },
+  plugins =
+  {
+       -- ["plugin.facebook.v4a"] =
+       -- {
+       --     publisherId = "com.coronalabs"
+       -- },
+       -- ["plugin.admob"] =
+       -- {
+       --     publisherId = "com.coronalabs"
+       -- },
+        ["plugin.google.iap.v3"] =
+        {
+          publisherId = "com.coronalabs",
+          supportedPlatforms = { android=true }
+        },
+        ["plugin.amazon.iap"] =
+        {
+            publisherId = "com.coronalabs",
+            supportedPlatforms = { ["android-kindle"]=true }
+        },
+        --["plugin.gameanalytics_v2"] =
+        --{
+        --    publisherId = "com.gameanalytics",
+        --    supportedPlatforms = { iphone=true, android=true }
+        --},
+        --["plugin.google.play.services"] =
+        --{
+        --    publisherId = "com.coronalabs",
+        --    supportedPlatforms = { iphone=true, android=true }
+        --},
+  },
+}
+-- bug carte 8 goh les ennemis vont pas dans le chemin du haut
+
+-- debug neverStripDebugInfo commentaire pour play store et pas beta
+
+--settings.plugins=nil -- plugin flurry reactiver dans build setting 
+-- version cheater pour tt appareils descativé remove:999
+
+-- protocole pour adapter build lte, mde, large:
+-- cree une copie de dossier 3Kings
+-- mettre en commentaire dans config les suffix
+-- supprimer les images non desierer (recherche dans dossier)
+-- renomer ceux qui reste en enlevant les suffix
+-- build en prennant en mettant le bon nom de l'appli... ( Stronghold 101 3.97 com.Artha.Kings)
+-- Code long tres long sans les 4 lettre en majuscule. Et le deuxieme code clasique long
+
+-- bug point interdiction avec les y. Les grandes unités vont dans la mauvaise direction
+-- bug lors du tuto pas de bouton play qyand il y a la fleche dessus
+-- mettre en texture ou canvas les cartes
+
+-- pour la version de gate of heroes
+-- modifier build setting exclude file, config.lua suffix et key.
+
+-- pour la sauvegarde en ligne:
+-- Creation de la sauvegarde quand on clique sur le bouton. Genere une suite de 10car.
+-- Les fichiers sont sauvegarder sur le drive
+-- A chaque sauvegarde de fichier on sauvegarde les sauvegardes
+-- A l'ouverture de l'appli ca telecharge la version sauf si la sienne est plus recente (un fichier portant un indice de sauvegarde, a chaque fois qu on sauvegarde le numero s'incremente de 1 et dans l'appli aussi, si le fichier ne peux pas s'envoyer le numero s'incremente de 1)
+-- Pour recuperer une sauvegarde, aller dans le meme menu et faire lié les appareils (et la on doit rentré le numero)
+-- En cas de reset de la sauvegarde, de lié les appli.
+-- Pour le criptage des parties avec l'id il faut bidouiller
+
+-- A tester! Liberer la memoire graphique des cartes. Si alert sur utilisation de la memoire graphique
+
+-- main ajout de quelques ligne
+-- config changer
+
+-- revoir creation destruction des trucs (tout voir en global)(voir si c'est bon)
+
+-- bouton bat caché derriere bouton start
+
+
+-- changelog=false le change log est forcé a 0.
+
+
+
+-- carte compression
+  -- jpg 90% tiny
+
+-- mettre a jour ybase et xbase. enlever commentaire ligne 342 à 347
+
+-- mettre a jour initrecherche
+
+--------------------------------------------------------------------------------------------------------------
+-- Choses à faire:
+-- Finir les cartes:
+  -- chemin
+    -- Taille et rayon
+    -- carte faite: (a completer)
+  -- obstacle
+    -- premiere version:
+    -- version d'apparence finale:
+    -- optimisation(suppression de point)
+-- Soldat : (chargementbisgoh et chargementtergoh)
+  -- position du centre du perso(centrex et centrey)
+  -- position de l'anim d'attaque(attx et atty)
+  -- duree d'animation d'attaque (a modifier en gardant la meme attaque par seconde)
+
+-- reperer toutes les images de mauvaise qualite (nom des images)
+-- les unités spawn avec les cartes zombies sont tous le temps en recherche de point (voir console)
+
+
+-- 300 en cadeau a la premiere victoire du level 16 -- verifié si marche
+-- deplacer tout les objets de decoration et les mettre en bas de chaque frame. Decaler tout les coordonnées des points d'obstacle et decoration
+-- remarque artha beta test
+  -- Je trouve que l'animation lorsque l'on clique sur le mur amélioration, est trop lente.
+  -- text tips sur engrenage a supprimé
+-- verifier si tout les parties sont correctement envoye au serveur
+
+-- level2 trop facile(arnaud)
+-- level4 difficulté faible au debut puis tout d'un coup trop dur(tristan)
+-- Boutonconf et refuser trop petit
+
+-- drapeau pour deplacer les soldats mieux adapter mode dezoomer (coordoner du drapeau qq pixel au dessus du doigt dependant du zoom)
+
+-- ajouter au premier lancement de l'appli telechargement de donné (permet de forcer l'utilisateur à activer son data)
+-- envoyer au serveur le model du tel
+
+-- animation quand plus de 5 personnes se battent en meme temps 
+--Par exemple le message "critical hit" peut apparaitre en montant et s'estompant, un peu comme l'animation des -1 des ennemis sortant de la map.
+--Ou également pour les combos, si le héros tue plusieurs ennemis en même temps avec un message "multi kill" par exemple.
+
+-- remarque louis #beta testeur
+-- verifier fonction des pub. + tester stronghold
+
+-- pub niveau bonus meme apres avoir fait l'inapp
+-- tout niveau debloquer avant inapp (a verifier)
+
+-- quand on a gagné ou perdu mieux le montrer (commentaire play store) Par exemple confiti...
+-- adapte le zoom max au suffix des images afficher
+----------------------------------------------------------------------------------------------------------------
+-- bug si pub et demande ensuite piece
+-- pour placer les batiments. Juste apres avoir cliquer sur le bouton constructinf ou arch on peut cliquer pour dire l'endroit ou on veut le bat
+-- bug plusieurs partie d'affilé (lié a la pub?)
+-- publicité verifier delais de 30 sec
+-- mettre que des pub de 30 sec et supprimer les autres. Des pubs visibles tout les 5 minutes de jeu minimum
+-- quand on deplace un batiment, le bouton start se retire et revient quand apres
+-- appliquer la police de lud
+-- corriger bug de statistique de fin de niveau
+-- apparition de soldat ont les coordonnées qui dependent de l'endroit ou vont les unités (bonus)
+-- deplacer la carte quand le batiment sort de l'ecran quand on essaye de le positionné
+-- objet de decoration qui ne disparaissent pas (carte 3)
+-- bouton statistique dans le menu principal avec nb de kill
+-- bug tuto quand tu es sur le menu principal et que tu cliques sur la fleche qui pointe les dev. Le bouton dev disparait
+-- niveau 1 (infanterie portee x2)
+-- niveau 2 (geant portee x2)
+-- 3 (cavalerie portée x2)
+-- 4 (mine repare 2x plus rapidement)
+-- 5 archer fleche 2x plus rapide
+-- 6 boulet 2x rapid
+-- 7 liquide +25% porte
+-- 8 delais d'attente avant de se reparer supprimer
+-- 9 infanterie +1
+-- 10 cavalerie +1
+-- 11 geant +1
+-- 12 mine +100% hp
+-- 13 archer +1 fleche
+-- 14 boulet +1 boulet
+-- 15 liquide x2 att
+-- 16 mine x4 tune
+
+-- pour le mode manquant
+-- mode armé avec les cercles des bat en infini
+-- un batiment mechant d'ou sorte les vagues
+-- l'objectif et d'en detruire un maximum
+-- quand il est detruit il se reapparait au bout de 1minutes
+-- pendant qu'il reapparait aucune troupe mechante spawn
+-- level enregistré est le nb de bat detruit (comme pour les niveaux zombies et tout)
+-- inversé l'emplacement dispo avec celui armé
+
+-- bug 2154 index field nil
+-- empecher warpriest de convertir des unités de plus 1000 de vie et depend du niveau
+-- faire que le spawn du soldat se fasse du coté ou il va

@@ -1,0 +1,106 @@
+local t = {}--3eme partie des cahrgmeent(image de boutons)
+t.chargement1 = function ()
+if issimulator then
+	local memUsed = (collectgarbage("count")) / 1000
+	local texUsed = system.getInfo( "textureMemoryUsed" ) / 1000000
+	print("\n---------MEMORY USAGE INFORMATION chargement1 avant---------")
+	print("System Memory Used:", string.format("%.03f", memUsed), "Mb")
+	print("Texture Memory Used:", string.format("%.03f", texUsed), "Mb")
+	print("------------------------------------------\n")
+end
+--print(coroutine.running())
+	--imbouton={}
+	-- local sheetInfo = require("testtexturepacker")
+	-- local myImageSheet = graphics.newImageSheet( "testtexturepacker.png", sheetInfo:getSheet() )
+	--local sprite = display.newSprite( myImageSheet , {frames={sheetInfo:getFrameIndex("sprite")}} )
+	-- imbouton.valider=graphics.newImageSheet("bouton/valider.png",{width=152,height=160,numFrames=1})
+	-- imbouton.supprimer=graphics.newImageSheet("bouton/supprimer.png",{width=152,height=160,numFrames=1})
+	-- imbouton.suprime=graphics.newImageSheet("bouton/suprime.png",{width=150,height=150,numFrames=1})
+	
+	-- imbouton.cavalerie=graphics.newImageSheet("bouton/cavlerie.png",{width=150,height=150,numFrames=1})
+	-- imbouton.mine=graphics.newImageSheet("bouton/mine.png",{width=150,height=150,numFrames=1})
+	-- imbouton.fric=graphics.newImageSheet("bouton/fric.png",{width=139,height=148,numFrames=1})
+	--imbouton.swipe=graphics.newImageSheet("tuto/swipe.png", { width=134, height=210, numFrames=1,sheetContentWidth=134,sheetContentHeight=210 } )
+	imbouton.swipe=graphics.newImageSheet("tuto/swipe1.png", { width=135, height=200, numFrames=1,sheetContentWidth=135,sheetContentHeight=200 } )
+	imbouton.cercle=graphics.newImageSheet("bouton/cercle.png",{width=389,height=379,numFrames=1})
+	imbouton.ads=graphics.newImageSheet("bouton/ads.png",{width=300,height=300,numFrames=1,sheetContentWidth=300,sheetContentHeight=300})
+	coroutine.yield()
+	-- imbouton.batiment=graphics.newImageSheet("bouton/batiment.png",{width=150,height=150,numFrames=14})
+	-- imbouton.construire=graphics.newImageSheet("bouton/construire.png",{width=150,height=150,numFrames=1})
+	-- imbouton.construirearch=graphics.newImageSheet("bouton/construirearch.png",{width=150,height=150,numFrames=1})
+	-- imbouton.construireinf=graphics.newImageSheet("bouton/construireinf.png",{width=150,height=150,numFrames=1})
+	-- imbouton.drapeau=graphics.newImageSheet("bouton/drapeau.png",{width=152,height=160,numFrames=1})
+	-- imbouton.geant=graphics.newImageSheet("bouton/geant.png",{width=150,height=150,numFrames=1})
+	-- imbouton.lave=graphics.newImageSheet("bouton/lave.png",{width=150,height=150,numFrames=1})
+	-- imbouton.siege=graphics.newImageSheet("bouton/siege.png",{width=150,height=150,numFrames=1})
+	-- imbouton.archer=graphics.newImageSheet("bouton/archer.png",{width=150,height=150,numFrames=1})
+	imbouton.pouvoir=graphics.newImageSheet("bouton/pouvoir.png",{width=204,height=194,numFrames=11})
+	-- imbouton.pouvoir1=graphics.newImageSheet("bouton/pouvoir1.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir1pret=graphics.newImageSheet("bouton/pouvoir1pret.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir2fl=graphics.newImageSheet("bouton/pouvoir2fl.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir2fo=graphics.newImageSheet("bouton/pouvoir2fo.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir2me=graphics.newImageSheet("bouton/pouvoir2me.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir2flpret=graphics.newImageSheet("bouton/pouvoir2fl.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir2fopret=graphics.newImageSheet("bouton/pouvoir2fo.png",{width=200,height=200,numFrames=1})
+	-- imbouton.pouvoir2mepret=graphics.newImageSheet("bouton/pouvoir2me.png",{width=200,height=200,numFrames=1})
+	-- imbouton.menupause=graphics.newImageSheet("bouton/boutonpause.png",{width=50,height=50,numFrames=11})
+	--imbouton.pvaction=graphics.newImageSheet("bouton/pvaction.png",{width=20,height=20,numFrames=1})
+	-- imbouton.pouvoir3=graphics.newImageSheet("bouton/pouvoir3.png",{width=200,height=200,numFrames=1})
+	imbouton.pouvoir3bande=graphics.newImageSheet("bouton/bandepv3.png",{width=20,height=61,numFrames=1})
+	coroutine.yield()
+	-- imbouton.pouvoir3actif=graphics.newImageSheet("bouton/pouvoir3actif.png",{width=200,height=200,numFrames=1})
+	imbouton.zoneoccupe=graphics.newImageSheet("bouton/zoneoccupe.png",{width=448,height=204,numFrames=8,sheetContentWidth=1792,sheetContentHeight=408}) --1})
+	-- imbouton.menupause=graphics.newImageSheet("bouton/pause.png",{width=50,height=50,numFrames=12})
+	-- imbouton.pause=graphics.newImageSheet("bouton/pause.png",{width=50,height=50,numFrames=1})
+	-- imbouton.play=graphics.newImageSheet("bouton/play.png",{width=50,height=50,numFrames=1})
+	-- imbouton.reglage=graphics.newImageSheet("bouton/reglage.png",{width=50,height=50,numFrames=2})
+	--imbouton.reglage=myImageSheet
+	-- imbouton.reglage.frames=sheetInfo:getFrameIndex("reglage.png")
+	-- imbouton.reglage.sheet ={frames = {{x=1,y=1,width=50,height=50},{x=51,y=1,width=50,height=50}}}
+
+	--imbouton.son=graphics.newImageSheet("bouton/son.png",{width=50,height=50,numFrames=2})
+	-- imbouton.vitesse=graphics.newImageSheet("bouton/vitesse.png",{width=50,height=50,numFrames=2})
+	-- imbouton.retourmenuprin=graphics.newImageSheet("bouton/home.png",{width=50,height=50,numFrames=1})
+	-- imbouton.recommencer=graphics.newImageSheet("bouton/retry.png",{width=50,height=50,numFrames=1})
+	-- imbouton.fenconf=graphics.newImageSheet("boutonmenu/fenetre.png",{width=240,height=150,numFrames=1})
+	imbouton.fondtunevie=graphics.newImageSheet("bouton/fondtunevie.png",{width=50,height=50,numFrames=1})
+	imbouton.affinfofond=graphics.newImageSheet("bouton/affinfofond.png",{width=372,height=187,numFrames=1}) --{width=400,height=100,numFrames=1})
+	imbouton.ombresld=graphics.newImageSheet("AnimVF/ombresld3.png",{width=60,height=37,numFrames=1,sheetContentWidth=60,sheetContentHeight=37})
+	imbouton.ombrefl=graphics.newImageSheet("AnimVF/ombrefl.png",{width=30,height=10,numFrames=1,sheetContentWidth=30,sheetContentHeight=10})
+	imbouton.ombrebou=graphics.newImageSheet("AnimVF/ombrebou.png",{width=20,height=20,numFrames=1,sheetContentWidth=20,sheetContentHeight=20})
+	imbouton.ombrebat=graphics.newImageSheet("AnimVF/ombrebat.png",{width=20,height=20,numFrames=1,sheetContentWidth=20,sheetContentHeight=20})
+	--imbouton.ombrebat1=graphics.newImageSheet("AnimVF/ombrebat1.png",{width=126,height=90,numFrames=3,sheetContentWidth=378,sheetContentHeight=90})
+	imbouton.vague1=graphics.newImageSheet("bouton/vague1.png",{width=298,height=116,numFrames=1})
+	--imbouton.fin=graphics.newImageSheet("bouton/fin.png",{width=99,height=55,numFrames=1})
+	--imbouton.save=graphics.newImageSheet("bouton/save.png",{width=100,height=50,numFrames=1})
+	coroutine.yield()
+	--imbouton.vaguesui=graphics.newImageSheet("bouton/vaguesui.png",{width=126,height=126,numFrames=1})
+	-- imbouton.piececristal=graphics.newImageSheet("bouton/piececristal.png",{width=100,height=100,numFrames=1})
+	imbouton.pierretombale=graphics.newImageSheet("AnimVF/pierretombale.png",{width=237,height=274,numFrames=1,sheetContentWidth=237,sheetContentHeight=274}) --{width=177,height=238,numFrames=1})
+	imbouton.pierretombalegene=graphics.newImageSheet("AnimVF/tombegene.png",{width=90,height=100,numFrames=1,sheetContentWidth=90,sheetContentHeight=100})
+
+	--imbouton.pieceor=graphics.newImageSheet("bouton/pieceor.png",{width=100,height=100,numFrames=1})
+	imbouton.gagne=graphics.newImageSheet("boutonmenu/gagne.png",{width=1855,height=1020,numFrames=2,sheetContentWidth=1855,sheetContentHeight=2048})
+
+	--ajouter image de la fenetre de confirmation
+	--imgchargement1:removeSelf()
+	-- imgchargement:rotate(90)
+	--bplein.x=contentcenterx-60*0.4
+	--bplein.xScale=0.6
+	-- local chargementaffichage = require ( "chargementaff")
+	-- chargementevo()
+	--imgchargement2=display.newImage("choniveau/chargementter.png",actualcontentwidth/2,actualcontentheight/2,true)
+	-- local function timerlancerniv3( event )
+	-- 	print("chargementdesfichier="..chargementdesfichier.." chargement1")
+	-- 	if chargementdesfichier==5 then
+	-- 		-- local lancerNiveau1 = require ( "niveau1" )
+	-- 		-- lancerNiveau1.niveau1(0)
+	-- 	end
+	-- 	-- local chargement2 = require ( "chargement2")
+	-- 	-- chargement2.chargement2()
+	-- end
+	-- timerlancernivter=timer.performWithDelay( 50, timerlancerniv3 )
+	-- chargementdesfichier=chargementdesfichier+1
+	chargementdesfichier[3]=1
+end
+return (t)
